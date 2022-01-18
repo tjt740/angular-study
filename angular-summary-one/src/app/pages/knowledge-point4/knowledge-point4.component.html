@@ -103,3 +103,25 @@
 
 
 <button nz-button nzType="default" (click)="changeFormGroupNameControl()">对第二层中的 FormGroup 中的某一个实例 赋值</button>
+
+
+
+<nz-divider></nz-divider>
+
+
+<h1>FormArray</h1>
+<form [formGroup]="validateFormArray">
+  姓名: <input type="text" formControlName='name'>
+  无法展示❌拥有的电话: <input type="text" formArrayName='phone'>
+
+  第一种可以展示✅拥有的电话:
+  <form formArrayName="phone" *ngFor="let item of phoneArray.controls; index as i ">
+
+
+  </form>
+</form>
+
+{{ validateFormArray.value | json }}
+
+<button (click)='addPhoneNum()'> 添加电话号码 </button>
+<button (click)='deletePhoneNum()'> 删除电话号码 </button>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-knowledge-point4',
@@ -67,6 +67,19 @@ export class KnowledgePoint4Component implements OnInit {
       province: new FormControl(null),
     }),
   });
+  // todo: 还没做笔记；
+  validateFormArray = new FormGroup({
+    name: new FormControl('甲'),
+    phone:new FormArray([new FormControl(15751666937),new FormControl(13706877876)])
+
+  })
+
+  get phoneArray() {
+    return this.validateFormArray.get('phone') as FormArray;
+  }
+
+  addPhoneNum() { }
+  deletePhoneNum() { }
 
   constructor() {
     // 获取FormGroup中某个值得变化
@@ -98,7 +111,11 @@ export class KnowledgePoint4Component implements OnInit {
   get addressForm() {
     return this.validateMonitorForm.get('address') as FormGroup;
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.nameFormControl.patchValue('戚思宁')
+    // },3000)
+  }
 
   setValue() {
     this.validateMonitorForm.setValue({
@@ -107,10 +124,9 @@ export class KnowledgePoint4Component implements OnInit {
       address: {
         nation: '瑞士',
         province: '沃',
-      }
-    })
+      },
+    });
   }
-
 
   patchValue() {
     this.validateMonitorForm.patchValue({
@@ -119,8 +135,8 @@ export class KnowledgePoint4Component implements OnInit {
       address: {
         nation: '中国',
         province: '江苏',
-      }
-    })
+      },
+    });
   }
 
   //对FormGroup中某一个实例进行赋值
@@ -129,17 +145,16 @@ export class KnowledgePoint4Component implements OnInit {
     this.validateMonitorForm.get('sex')?.patchValue('女');
   }
 
-
   // 对二级FormGroup整个赋值
   changeFormGroupName() {
     this.validateMonitorForm.get('address')?.setValue({
-        nation: '江苏',
-        province: '扬州',
-    })
+      nation: '江苏',
+      province: '扬州',
+    });
 
     this.validateMonitorForm.get('address')?.patchValue({
       province: '苏州',
-    })
+    });
   }
 
   // 对第二层中的 FormGroup 中的某一个实例 赋值
@@ -147,5 +162,8 @@ export class KnowledgePoint4Component implements OnInit {
     this.validateMonitorForm.get('address')?.get('nation')?.setValue('上海');
 
     this.validateMonitorForm.get('address')?.get('nation')?.patchValue('深圳');
-   }
+  }
+
+
+
 }
