@@ -114,10 +114,11 @@
   姓名: <input type="text" formControlName='name'>
   无法展示❌拥有的电话: <input type="text" formArrayName='phone'>
 
-  第一种可以展示✅拥有的电话:
+  第一种可以展示✅拥有的电话: <input type="text" formControlName='phone'>
+
+  第二种可以展示✅拥有的电话:
   <form formArrayName="phone" *ngFor="let item of phoneArray.controls; index as i ">
-
-
+    <input nz-input type="text" placeholder="请输入电话号码~" [formControlName]="i">
   </form>
 </form>
 

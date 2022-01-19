@@ -71,8 +71,8 @@ export class KnowledgePoint4Component implements OnInit {
   validateFormArray = new FormGroup({
     name: new FormControl('甲'),
     phone:new FormArray([new FormControl(15751666937),new FormControl(13706877876)])
-
   })
+
 
   get phoneArray() {
     return this.validateFormArray.get('phone') as FormArray;
