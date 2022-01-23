@@ -1,0 +1,29 @@
+<h1>使用FormBuild快速构建表单</h1>
+
+<form [formGroup]="validateForm">
+  姓名:
+  <input type='text' formControlName='name' />
+
+  <form formArrayName="phone" *ngFor="let item of validateFormPhoneArray.controls; index as i">
+    电话{{i+1}}:<input type="text" [formControlName]="i" /><button (click)='remove(i)'>删除</button>
+  </form>
+
+  地址:
+  <form formGroupName="address">
+    <input type='text' formControlName='nation' />
+    <input type='text' formControlName='province' />
+  </form>
+
+</form>
+
+{{ validateForm.value | json}}
+
+
+<nz-divider></nz-divider>
+
+<h1>校验表单</h1>
+表单的状态{{validateForm.status}}
+<button nz-button nzType="primary" (click)='validatorName()'>校验名字</button>
+<button nz-button nzType="default" (click)='validatorPhone()'>校验手机号</button>
+
+表单的状态: {{ status }}

@@ -111,18 +111,22 @@
 
 <h1>FormArray</h1>
 <form [formGroup]="validateFormArray">
-  姓名: <input type="text" formControlName='name'>
-  无法展示❌拥有的电话: <input type="text" formArrayName='phone'>
 
-  第一种可以展示✅拥有的电话: <input type="text" formControlName='phone'>
+  无法展示❌拥有的电话: <input type="text" formArrayName='phone'><br>
 
-  第二种可以展示✅拥有的电话:
+  可以展示✅拥有的电话:
   <form formArrayName="phone" *ngFor="let item of phoneArray.controls; index as i ">
     <input nz-input type="text" placeholder="请输入电话号码~" [formControlName]="i">
+    <button (click)='deletePhoneNum(i)'> 删除电话号码 </button>
   </form>
+
 </form>
 
 {{ validateFormArray.value | json }}
 
 <button (click)='addPhoneNum()'> 添加电话号码 </button>
-<button (click)='deletePhoneNum()'> 删除电话号码 </button>
+<button (click)='patchPhoneNum1()'>改变FormArray（1）</button>
+<button (click)='patchPhoneNum2()'>改变FormArray（2）</button>
+
+
+

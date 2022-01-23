@@ -10,12 +10,13 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+registerLocaleData(zh);
 //页面
 import { KnowledgePoint1Component } from './pages/knowledge-point1/knowledge-point1.component';
 import { KnowledgePoint2Component } from './pages/knowledge-point2/knowledge-point2.component';
 import { KnowledgePoint3Component } from './pages/knowledge-point3/knowledge-point3.component';
 import { KnowledgePoint4Component } from './pages/knowledge-point4/knowledge-point4.component';
-registerLocaleData(zh);
+import { KnowledgePoint5Component } from './pages/knowledge-point5/knowledge-point5.component';
 
 
 // ng-zorro 组件
@@ -54,6 +55,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SortPipePipe,
     QuChongPipe,
     KnowledgePoint4Component,
+    KnowledgePoint5Component,
   ],
   imports: [
     FormsModule,

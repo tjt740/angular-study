@@ -69,17 +69,35 @@ export class KnowledgePoint4Component implements OnInit {
   });
   // todo: 还没做笔记；
   validateFormArray = new FormGroup({
-    name: new FormControl('甲'),
-    phone:new FormArray([new FormControl(15751666937),new FormControl(13706877876)])
-  })
-
+    phone: new FormArray([
+      new FormControl(15751666937),
+      new FormControl(13706877876),
+    ]),
+  });
 
   get phoneArray() {
     return this.validateFormArray.get('phone') as FormArray;
   }
 
-  addPhoneNum() { }
-  deletePhoneNum() { }
+  addPhoneNum() {
+    (this.validateFormArray.get('phone') as FormArray).push(new FormControl(110));
+    //  this.phoneArray.push(new FormControl(110))
+  }
+  deletePhoneNum(index: any) {
+    ( this.validateFormArray.get('phone') as FormArray ).removeAt(index)
+    // this.phoneArray.removeAt(index);
+  }
+
+  patchPhoneNum1() {
+    this.phoneArray.patchValue([740, 750]); // 会把原先的表单清空
+    //( this.validateFormArray.get('phone') as FormArray).patchValue([value1,value2])
+  }
+  patchPhoneNum2() {
+    const newArray = [740, 750];
+    newArray.forEach(i => {
+      this.phoneArray.push(new FormControl(i))
+    })
+  }
 
   constructor() {
     // 获取FormGroup中某个值得变化
@@ -163,7 +181,4 @@ export class KnowledgePoint4Component implements OnInit {
 
     this.validateMonitorForm.get('address')?.get('nation')?.patchValue('深圳');
   }
-
-
-
 }
