@@ -26,6 +26,7 @@ import { IndexOpenComponent } from './components/index-open/index-open.component
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 
 // 服务
@@ -70,7 +71,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NzIconModule,
     NzButtonModule,
     NzInputModule,
-    NzDividerModule
+    NzDividerModule,
+    NzAlertModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],

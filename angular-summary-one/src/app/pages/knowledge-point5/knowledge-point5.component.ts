@@ -25,9 +25,19 @@ export class KnowledgePoint5Component implements OnInit {
   // 使用FormBuilder重新构建表单
   validateForm = this.fb.group({
     name: new FormControl('谭金涛', [
-      Validators.required
+      Validators.required,
+      Validators.maxLength(3),
     ]),
-    phone: new FormArray([new FormControl(110), new FormControl(120)]),
+    phone: new FormArray([
+      new FormControl(110, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(5),
+      Validators.pattern(/^\d+$/),
+      ]),
+      new FormControl(120)
+    ]),
+
     address: new FormGroup({
       nation: new FormControl('中国'),
       province: new FormControl('浙江'),
@@ -59,11 +69,14 @@ export class KnowledgePoint5Component implements OnInit {
   ngOnInit(): void { }
 
   status = '';
-  validatorName() {
+  validator() {
     this.status = validatorsStatus[this.validateForm.status];
-  }
+    // Validators.required:非空值验证器;
+    // Validators.maxLength(max):最大长度为max的验证器;
+    // Validators.minLength(min):最小长度为min的验证器;
+    // Validators.max(max):最大值为max的验证器;
+    // Validators.min(min):最小值为max的验证器;
+    // Validators.pattern(/^\d+$/)]:符合某些正则表达式的验证器;
 
-  validatorPhone() {
-    this.status = validatorsStatus[this.validateForm.status];
   }
 }

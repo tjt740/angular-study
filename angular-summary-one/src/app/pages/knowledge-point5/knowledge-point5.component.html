@@ -23,7 +23,14 @@
 
 <h1>校验表单</h1>
 表单的状态{{validateForm.status}}
-<button nz-button nzType="primary" (click)='validatorName()'>校验名字</button>
-<button nz-button nzType="default" (click)='validatorPhone()'>校验手机号</button>
-
+<button nz-button nzType="primary" (click)='validator()'>校验</button>
 表单的状态: {{ status }}
+
+
+
+<nz-alert
+  nzType="error"
+  nzMessage="校验未通过"
+  *ngIf="validateForm.get('phone')?.hasError('maxLength')
+  ">
+</nz-alert>
