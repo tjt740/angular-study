@@ -17,6 +17,9 @@ import { KnowledgePoint2Component } from './pages/knowledge-point2/knowledge-poi
 import { KnowledgePoint3Component } from './pages/knowledge-point3/knowledge-point3.component';
 import { KnowledgePoint4Component } from './pages/knowledge-point4/knowledge-point4.component';
 import { KnowledgePoint5Component } from './pages/knowledge-point5/knowledge-point5.component';
+import { KnowledgePoint6Component } from './pages/knowledge-point6/knowledge-point6.component';
+import { KnowledgePoint7Component } from './pages/knowledge-point7/knowledge-point7.component';
+import { KnowledgePoint8Component } from './pages/knowledge-point8/knowledge-point8.component';
 
 
 // ng-zorro 组件
@@ -27,21 +30,19 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 // 服务
 
-
 // 插件
-
 
 // 管道
 import { SortPipePipe } from './pipe/sort-pipe.pipe';
 import { QuChongPipe } from './pipe/qu-chong.pipe';
 
 // 双向数据绑定
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,10 +54,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     KnowledgePoint1Component,
     KnowledgePoint2Component,
     KnowledgePoint3Component,
-    SortPipePipe,
-    QuChongPipe,
     KnowledgePoint4Component,
     KnowledgePoint5Component,
+    KnowledgePoint6Component,
+    SortPipePipe,
+    QuChongPipe,
+    KnowledgePoint7Component,
+    KnowledgePoint8Component,
   ],
   imports: [
     FormsModule,
@@ -72,7 +76,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NzButtonModule,
     NzInputModule,
     NzDividerModule,
-    NzAlertModule
+    NzAlertModule,
+    NzCardModule,
+    NzFormModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],

@@ -138,7 +138,7 @@ export class KnowledgePoint4Component implements OnInit {
   setValue() {
     this.validateMonitorForm.setValue({
       name: '戚思宁',
-
+      sex:'女',
       address: {
         nation: '瑞士',
         province: '沃',

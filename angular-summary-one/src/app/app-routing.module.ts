@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './pages/index/index.component';
 import { NoFoundComponent } from './pages/no-found/no-found.component';
 import { AuthGuard } from './auth/auth.guard';
@@ -8,49 +8,62 @@ import { KnowledgePoint2Component } from './pages/knowledge-point2/knowledge-poi
 import { KnowledgePoint3Component } from './pages/knowledge-point3/knowledge-point3.component';
 import { KnowledgePoint4Component } from './pages/knowledge-point4/knowledge-point4.component';
 import { KnowledgePoint5Component } from './pages/knowledge-point5/knowledge-point5.component';
-
+import { KnowledgePoint6Component } from './pages/knowledge-point6/knowledge-point6.component';
+import { KnowledgePoint7Component } from './pages/knowledge-point7/knowledge-point7.component';
+import { KnowledgePoint8Component } from './pages/knowledge-point8/knowledge-point8.component';
 
 const routes: Routes = [
-
   {
     path: 'index',
     component: IndexComponent,
     // 路由守卫
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'knowledge-point1',
-        component:KnowledgePoint1Component,
+        component: KnowledgePoint1Component,
       },
       {
         path: 'knowledge-point2',
-        component:KnowledgePoint2Component,
+        component: KnowledgePoint2Component,
       },
       {
         path: 'knowledge-point3',
-        component:KnowledgePoint3Component,
+        component: KnowledgePoint3Component,
       },
       {
         path: 'knowledge-point4',
-        component:KnowledgePoint4Component,
+        component: KnowledgePoint4Component,
       },
       {
         path: 'knowledge-point5',
-        component:KnowledgePoint5Component
-      }
-    ]
+        component: KnowledgePoint5Component,
+      },
+      {
+        path: 'knowledge-point6',
+        component: KnowledgePoint6Component,
+      },
+      {
+        path: 'knowledge-point7',
+        component: KnowledgePoint7Component,
+      },
+      {
+        path: 'knowledge-point8',
+        component: KnowledgePoint8Component,
+      },
+    ],
   },
 
   // 重定向页面
   {
     path: '',
     redirectTo: '/index',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   // 匹配不到路由时调用；
   {
     path: '**',
-    component: NoFoundComponent
+    component: NoFoundComponent,
   },
 ];
 

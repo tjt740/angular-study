@@ -1,0 +1,24 @@
+<h1>动态校验表单类别</h1>
+
+
+<form [formGroup]="validatorsForm">
+  校验类型:
+  <select formControlName="category">
+    <option [value]="item.value" *ngFor="let item of categoryList; index as i">{{item.label}}</option>
+  </select>
+  <br/>
+  姓名: <input type="text"  placeholder='请输入姓名' formControlName='name' >
+  年龄: <input type="text"  placeholder='请输入年龄' formControlName='age'><br/>
+  地址:
+  <form formGroupName="address">
+    省份: <input type="text"  placeholder='请输入省份' formControlName='province'>
+    城市: <input type="text"  placeholder='请输入城市' formControlName='city'>
+  </form>
+</form>
+
+<button (click)='validator(category)'>校验</button>
+<button (click)='reset()'>重置</button>
+<nz-divider></nz-divider>
+<p> 表单参数：{{validatorsForm.value | json}}; </p>
+
+<p> 表单状态：{{formStatus}}</p>

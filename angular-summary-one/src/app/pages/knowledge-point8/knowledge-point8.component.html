@@ -1,0 +1,13 @@
+<nz-content>
+  <nz-divider nzText="模板驱动式表单验证"></nz-divider>
+  <form nz-form>
+    <nz-form-item>
+      <nz-form-label nzSpan="3" nz-col>姓名</nz-form-label>
+      <nz-form-control nzSpan="6" nz-col>
+        <input nz-input type="text" name="name" id="name"
+               required minlength="2" maxlength="10"
+               [(ngModel)]="name">
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-content>

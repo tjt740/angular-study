@@ -1,0 +1,23 @@
+<h1>响应式表单-FormArray 和 FormGroup的多层嵌套</h1>
+<nz-divider></nz-divider>
+
+<form [formGroup]="validatorForm">
+  <nz-card>
+    姓名: <input nz-input nzSize="default" type="text" formControlName='name'>
+    年龄: <input nz-input nzSize="default" type="number" formControlName='age'>
+    地址: <form formGroupName="address">
+      省份：
+      <input nz-input type="select" formControlName='province'>
+      城市：
+      <input nz-input type="select" formControlName='city'>
+    </form>
+    联系方式： <form formArrayName="phone" *ngFor="let item of validatorFormPhone.controls; index as i">
+      电话{{i+1}}:<input nz-input type="text" [formControlName]="i" /><a nz-button (click)='remove(i)' nzDanger>删除</a>
+    </form>
+  </nz-card>
+</form>
+
+{{ validatorForm.value | json }}
+
+<button nz-button nzType="primary">添加form组件</button>
+<button nz-button nzType="default">删除form组件</button>
