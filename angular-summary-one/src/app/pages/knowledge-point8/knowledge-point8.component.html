@@ -4,10 +4,22 @@
     <nz-form-item>
       <nz-form-label nzSpan="3" nz-col>姓名</nz-form-label>
       <nz-form-control nzSpan="6" nz-col>
-        <input nz-input type="text" name="name" id="name"
+              <input nz-input type="text" name="name"
                required minlength="2" maxlength="10"
                [(ngModel)]="name">
       </nz-form-control>
     </nz-form-item>
   </form>
 </nz-content>
+
+
+<nz-divider ></nz-divider>
+
+
+<form [formGroup]="demoForm">
+   姓名: <input type="text" formControlName='name'>
+
+   性别: <input type="text" formControlName='sex'>
+
+   年龄: <input type="text" formControlName='age'>
+</form>
