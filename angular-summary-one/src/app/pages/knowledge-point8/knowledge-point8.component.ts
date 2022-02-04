@@ -18,10 +18,7 @@ export class KnowledgePoint8Component implements OnInit {
     })
   }
   name = null;
-  ngOnInit(): void { }
-
-  validator() {
-
+  ngOnInit(): void {
 
   }
 }

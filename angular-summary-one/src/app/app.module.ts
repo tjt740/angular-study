@@ -20,7 +20,7 @@ import { KnowledgePoint5Component } from './pages/knowledge-point5/knowledge-poi
 import { KnowledgePoint6Component } from './pages/knowledge-point6/knowledge-point6.component';
 import { KnowledgePoint7Component } from './pages/knowledge-point7/knowledge-point7.component';
 import { KnowledgePoint8Component } from './pages/knowledge-point8/knowledge-point8.component';
-
+import { KnowledgePoint9Component } from './pages/knowledge-point9/knowledge-point9.component';
 
 // ng-zorro 组件
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -45,6 +45,13 @@ import { QuChongPipe } from './pipe/qu-chong.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
+// 自定义指令
+import { DirectiveOneDirective } from './directive/directive-one.directive';
+import { MyDirectiveDirective } from './directive/my-directive.directive';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,10 +64,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     KnowledgePoint4Component,
     KnowledgePoint5Component,
     KnowledgePoint6Component,
-    SortPipePipe,
-    QuChongPipe,
+    KnowledgePoint9Component,
     KnowledgePoint7Component,
     KnowledgePoint8Component,
+    // 管道
+    SortPipePipe,
+    QuChongPipe,
+    // 自定义指令
+    DirectiveOneDirective,
+    MyDirectiveDirective,
+
   ],
   imports: [
     FormsModule,

@@ -11,6 +11,7 @@ import { KnowledgePoint5Component } from './pages/knowledge-point5/knowledge-poi
 import { KnowledgePoint6Component } from './pages/knowledge-point6/knowledge-point6.component';
 import { KnowledgePoint7Component } from './pages/knowledge-point7/knowledge-point7.component';
 import { KnowledgePoint8Component } from './pages/knowledge-point8/knowledge-point8.component';
+import { KnowledgePoint9Component } from './pages/knowledge-point9/knowledge-point9.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'knowledge-point8',
         component: KnowledgePoint8Component,
+      },
+      {
+        path: 'knowledge-point9',
+        component: KnowledgePoint9Component,
       },
     ],
   },
