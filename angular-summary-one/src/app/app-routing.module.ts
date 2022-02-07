@@ -12,6 +12,8 @@ import { KnowledgePoint6Component } from './pages/knowledge-point6/knowledge-poi
 import { KnowledgePoint7Component } from './pages/knowledge-point7/knowledge-point7.component';
 import { KnowledgePoint8Component } from './pages/knowledge-point8/knowledge-point8.component';
 import { KnowledgePoint9Component } from './pages/knowledge-point9/knowledge-point9.component';
+import { LifecycleComponent } from './pages/lifecycle/lifecycle.component';
+
 
 const routes: Routes = [
   {
@@ -55,6 +57,10 @@ const routes: Routes = [
       {
         path: 'knowledge-point9',
         component: KnowledgePoint9Component,
+      },
+      {
+        path: 'lifecycle-hook',
+        component: LifecycleComponent,
       },
     ],
   },
