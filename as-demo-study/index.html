@@ -15,16 +15,15 @@
     <script type="module">
 
 
-        // import xxx from 'xxx'：（export default obj）只会导出这个默认的对象作为一个对象,想要获得其他对象,就需要 import {a , b } from  'xxx'
+        // import xxx from 'xxx'：（export default obj）只会导出这个默认的对象作为一个对象,想要获得其他对象,就需要 import {a , b} from  'xxx'
         import obj from './a.js';
         console.log('obj:', obj); // obj: {name: '谭金涛', sex: '男'}  
        
 
-
         // import * as xxx from 'xxx': 会将若干export导出的内容组合成一个对象返回；
         // all 自定义名字;
         import * as all from './b.js';
-        console.log(all.json , all.tall); // {name: 'tjt', sex: 'man'} 175
+        console.log(all ,all.json , all.tall); // {name: 'tjt', sex: 'man'} 175
     </script>
 
 
