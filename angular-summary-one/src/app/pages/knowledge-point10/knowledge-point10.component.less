@@ -1,0 +1,28 @@
+
+// 无效更改 组件内部样式。
+.ant-alert-message {
+  color: tan
+}
+
+
+// 样式穿透 弊端: 会更改所有相关组件样式 优化↓↓↓
+::ng-deep{
+  .ant-alert-message {
+    color: tan;
+  }
+}
+
+// 样式穿透 不会更改相关组件样式的方法
+:host {
+  ::ng-deep{
+    .ant-alert-message {
+      color: tan;
+    }
+  }
+}
+
+
+/*
+  <:host{}>: 似限制只能在本组件中修改样式。
+  <::ng-deep{}>样式穿透。
+*/
