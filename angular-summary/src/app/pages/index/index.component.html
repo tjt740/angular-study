@@ -1,5 +1,5 @@
 <nz-layout class="layout">
-  <nz-sider nzCollapsible [nzTrigger]="null">
+  <nz-sider nzCollapsible [nzTrigger]="null" [nzWidth]="300">
     <div class="logo"><img
         src="https://img.alicdn.com/imgextra/i2/O1CN01Az0hBv1Wut7WuD05K_!!6000000002849-55-tps-186-200.svg"
         alt=""><span>Angular</span></div>
@@ -15,9 +15,11 @@
       <li [routerLink]="['/index/knowledge-point9']">自定义指令的使用</li>
       <li [routerLink]="['/index/lifecycle-hook']">生命周期</li>
       <li [routerLink]="['/index/knowledge-point10']">:host、:host-context、::ng-deep</li>
+      <li [routerLink]="['/index/knowledge-point11']">组件传值@Input/@output/RXJS/@ViewChild...</li>
+
     </ul>
   </nz-sider>
-  <nz-layout>
+  <nz-layout class="right-layout">
     <nz-header *ngIf='!isIndex'>
       <button nz-button nzType="default" nzShape="circle" (click)="goBack()">
         <i nz-icon nzType="left" nzTheme="outline"></i>

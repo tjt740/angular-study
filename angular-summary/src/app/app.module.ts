@@ -24,6 +24,8 @@ import { KnowledgePoint9Component } from './pages/knowledge-point9/knowledge-poi
 import { LifecycleComponent } from './pages/lifecycle/lifecycle.component';
 import { KnowledgePoint10Component } from './pages/knowledge-point10/knowledge-point10.component';
 import { NgOnchangesLifecycleComponent } from './components/ng-onchanges-lifecycle/ng-onchanges-lifecycle.component';
+import { KnowledgePoint11Component } from './pages/knowledge-point11/knowledge-point11.component';
+
 
 // ng-zorro 组件
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
@@ -79,6 +81,7 @@ import { MyDirectiveDirective } from './directive/my-directive.directive';
     LifecycleComponent,
     NgOnchangesLifecycleComponent,
     KnowledgePoint10Component,
+    KnowledgePoint11Component,
   ],
   imports: [
     FormsModule,
